@@ -22,13 +22,23 @@ fnet is a trained diffusion model that can produce fruit-like smudges under prop
 There are some hotkeys to operate the model, which are as follows:
 
 E: Detach training, this does nothing in the trained model
-Space: align the inputs to be the same as the inputs given in training (to print the training data)
+
+Space: start the network with and align the inputs to be the same as the inputs given in training (to print the training data)
+
 Y: Hybridize the output of the network with static, just to see 
+
 M: Provide purely the previous output as input, check for attractors
+
 C: stop the count, and lock the image projection on a single fruit/input
+
 T: Recume training, again, no value in trained model. 
-Z: Shift data input seed to offset to 1 instead of 0 (see some diffused fruit)
+
+Z: start the network and Shift data input seed to offset to 1 instead of 0 (see some diffused fruit)
+
 3: Print out the trained network. 
+
 R: Convert the current input to a gradient. 
+
+O: start the network with totally random inputs
 
 
