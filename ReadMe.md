@@ -37,7 +37,7 @@ Z: start the network and Shift data input seed to offset to 1 instead of 0 (see 
 
 3: Print out the trained network. 
 
-R: Convert the current input to a gradient. 
+R: hold to Convert the current input to a gradient. 
 
 O: start the network with totally random inputs
 
