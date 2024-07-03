@@ -12,8 +12,8 @@ chrome.exe  --disable-site-isolation-trials --disable-web-security --user-data-d
 
 These commands open an instance of chrome with disabled security, this allows the pixel data to be from a local origin. 
 
-Once the csf38.html has loaded, it will access the fnet.js file from https://ditzbitz.com/fnet.js by default and load it into the program. 
-fnet is a trained diffusion model that can produce fruit-like smudges under proper guidance. 
+Once the csf38.html has loaded, it will access the wnet.js file by default and load it into the program. 
+wnet is a trained diffusion model that can produce fruit-like smudges under proper guidance. 
 
 ![Alt Text](https://ditzbitz.com/fshett.gif)
 
