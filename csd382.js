@@ -1016,7 +1016,7 @@ function setUp(canvas_pass, style = "#000000") {
     canvas.style.background = style
     window.setInterval(function () {
         main()
-    }, 3)
+    }, 30)
     document.addEventListener('keydown', (event) => {
         keysPressed[event.key] = true;
     });
@@ -1597,7 +1597,7 @@ let net = new Network(inputs, [256, 256, inputs.length])
 net.becomeNetworkFrom(network)
 
 let pixfruits = new Image()
-pixfruits.src = "pixfruits.png"
+pixfruits.src = "fruis.png"
 let frui = new Image()
 frui.src = "fruis.png"
 
@@ -1628,22 +1628,22 @@ function main() {
                     link.click();
                 }, "image/png");
             }
-            var script = document.createElement("script");
-            script.setAttribute("type", "text/javascript");
-            if (filein < 10) {
-                script.setAttribute("src", `fnet0000${filein}.js`);
-            } else if (filein < 100) { 
-                script.setAttribute("src", `fnet000${filein}.js`);
-            } else if (filein < 1000) {
-                script.setAttribute("src", `fnet00${filein}.js`);
-            }
-            filein++
-            console.log(script)  
-            document.getElementsByTagName("head")[0].appendChild(script);
-            net.becomeNetworkFrom(network)
+            // var script = document.createElement("script");
+            // script.setAttribute("type", "text/javascript");
+            // if (filein < 10) {
+            //     script.setAttribute("src", `fnet0000${filein}.js`);
+            // } else if (filein < 100) { 
+            //     script.setAttribute("src", `fnet000${filein}.js`);
+            // } else if (filein < 1000) {
+            //     script.setAttribute("src", `fnet00${filein}.js`);
+            // }
+            // filein++
+            // console.log(script)  
+            // document.getElementsByTagName("head")[0].appendChild(script);
+            // net.becomeNetworkFrom(network)
             count = 0
             started = 0
-            keysPressed[' '] = true
+            // keysPressed[' '] = true
         }
 
         return
@@ -1710,6 +1710,49 @@ function main() {
             statpixboxes2[t] = canvas_context.getImageData(0, 0, 32, 32)
         }
         start = 1
+    }
+
+    if (keysPressed['o'] || stepover == 5.1) {
+        keysPressed['o'] = false
+        out = 0
+        started = 1
+        if (m < 0) {
+            m = 0
+        }
+        stepover = 0
+        count = 0
+
+
+
+        randpoint =  Math.floor(Math.random() * rands.length)
+        stepover = 0
+        count = 0
+        for (let t = 0; t < (91); t++) {
+            canvas_context.fillStyle = "#888888"
+            canvas_context.fillRect(0, 0, canvas.width, canvas.height)  // refreshes the image
+            canvas_context.drawImage(frui, (t % (91)) * 270, 0, 270, 270, 0, 0, 32, 32)
+            pixboxes[t] = canvas_context.getImageData(0, 0, 32, 32)
+            canvas_context.clearRect(0, 0, canvas.width, canvas.height)
+            for (let k = 0; k < pixboxes[count].data.length; k += 4) {
+                let r1 = rands[randpoint]
+                randpoint++
+                randpoint %= rands.length
+                let r2 = rands[randpoint]
+                randpoint++
+                randpoint %= rands.length
+                let r3 = rands[randpoint]
+                randpoint++
+                randpoint %= rands.length
+                pix3.data[k] = r1 * 255
+                pix3.data[k + 1] = r2 * 255
+                pix3.data[k + 2] = r3 * 255
+                pix3.data[k + 3] = 255
+            }
+            canvas_context.putImageData(pix3, 0, 0)
+            statpixboxes[t] = canvas_context.getImageData(0, 0, 32, 32)
+            statpixboxes2[t] = canvas_context.getImageData(0, 0, 32, 32)
+        }
+        start = 2
     }
     if (keysPressed['z'] || stepover == 5.1) {
         keysPressed['z'] = false
