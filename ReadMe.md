@@ -3,9 +3,11 @@ This project uses pixel data lifted from images present in this directory,
 to test this project locally, you will need to run the csf38.html file in a browser such as chrome.
 
 On mac you will need to run the following command in your terminal 
+
 open -n -a "Google Chrome" --args --user-data-dir=/tmp/temp_chrome_user_data_dir http://localhost:8100/ --disable-web-security 
 
 On windows run the following from within the directory of chrome
+
 chrome.exe  --disable-site-isolation-trials --disable-web-security --user-data-dir="D:\temp"
 
 These commands open an instance of chrome with disabled security, this allows the pixel data to be from a local origin. 
