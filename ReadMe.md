@@ -31,7 +31,7 @@ M: Provide purely the previous output as input, check for attractors
 
 C: stop the count, and lock the image projection on a single fruit/input
 
-T: Recume training, again, no value in trained model. 
+T: Resume training, again, no value in trained model. 
 
 Z: start the network and Shift data input seed to offset to 1 instead of 0 (see some diffused fruit)
 
